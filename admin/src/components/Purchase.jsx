@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import io from 'socket.io-client';
 import { toast } from 'react-toastify';
-const socket = io('http://localhost:4000', {
+const socket = io('https://mohoec.onrender.com', {
   transports: ['websocket'],
   withCredentials: true,
 });

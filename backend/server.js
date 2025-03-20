@@ -25,7 +25,7 @@ const __dirname = path.dirname(__filename);
 const server = http.createServer(app);
 export const io = new Server(server, {
     cors: {
-      origin: ["http://localhost:5173", "http://localhost:5174"], // Update with your frontend URL
+      origin: ["https://moho-ec.vercel.app", "https://moho-admin-dwxxe1xck-henrys-projects-2851b697.vercel.app"], // Update with your frontend URL
       methods: ["GET", "POST"],
       credentials: true,
     },

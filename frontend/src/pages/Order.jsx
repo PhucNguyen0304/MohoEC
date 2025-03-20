@@ -15,7 +15,7 @@ const Order = ({user}) => {
  
   const handlePayment = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/api/payment/momo', {
+      const response = await axios.post('https://mohoec.onrender.com/api/payment/momo', {
         name,
         address,
         numberPhone,

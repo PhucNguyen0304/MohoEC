@@ -7,7 +7,7 @@ import axios from 'axios';
 import { backendUrl } from '../App.jsx';
 import { toast } from 'react-toastify';
 const Messages = () => {
-  const socket = io('http://localhost:4000', {
+  const socket = io('https://mohoec.onrender.com', {
     transports: ['websocket'],
     withCredentials: true,
   });
