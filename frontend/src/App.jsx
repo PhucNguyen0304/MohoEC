@@ -18,7 +18,7 @@ import SignUp from './components/SignUp.jsx'
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart.jsx'
 import ResetPass from './components/ResetPass.jsx'
-  import PaymentInfor from './components/PaymentInfor.jsx'
+import Paymentinfor1 from './components/paymentinfor1.jsx'
 import Orders from './pages/Order.jsx'
 import ShopContextProvider, { ShopContext } from './context/ShopContextProvider.jsx'
 import Purchase from './components/Purchase.jsx'
@@ -84,7 +84,7 @@ useEffect(() => {
           <Route path='/signup' element = {<SignUp/>}></Route>
           <Route path='/resetpass/:token' element = {<ResetPass/>}></Route>
           <Route path='/order' element = {<Orders user = {user}/>}></Route>
-          <Route path='/paymentinfor' element = {<PaymentInfor/>}></Route>
+          <Route path='/paymentinfor' element = {<Paymentinfor1/>}></Route>
           <Route path='/purchase' element = {<Purchase/>}></Route>
           <Route path='/articles' element = {<Articles/>}></Route>
           <Route path='/article/:articleId' element = {<ArticleDetail/>}></Route>
