@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "Article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "section1": {
+      "type": "string"
+    },
+    "content1": {
+      "type": "text"
+    },
+    "section2": {
+      "type": "string"
+    },
+    "content2": {
+      "type": "text"
+    },
+    "image1": {
+      "type": "string"
+    },
+    "image2": {
+      "type": "string"
+    }
+  }
+}
