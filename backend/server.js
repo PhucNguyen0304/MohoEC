@@ -89,7 +89,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 //end pointer
 app.get((''),(req,res)=> {
-    res.send('API WORKING FOR MOHO , PORT ' + PORT)
+    res.send('API WORKING FOR MOHO , PORT ' + PORT) 
 })
 app.use('/api/user',userRoute)
 app.use('/api/product',productRoute)

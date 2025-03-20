@@ -387,7 +387,7 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
     const value = {
         products,sortType,setSortType,category,setCategory,
         subCategory,setSubCategory,search,setSearch,filterProducts,setFilterProducts,
-        cartItems,setCartItems,addToCart,totalAmount,setTotalAmount,cartData,setCartData,totalAmount,
+        cartItems,setCartItems,addToCart,totalAmount,setTotalAmount,cartData,setCartData,
         totalProductQuanlity,setTotalProductQuanlity,updateQuanlity,deleteProductCart,user,visibleInfor,setVisibleInfor,saveCart,
         updateCartDB,sendPurchase,inforPay,setInforPay,sendRequest,purchase ,setPurchases, messages,setMessages,sendMessage,
         articles, setArticles

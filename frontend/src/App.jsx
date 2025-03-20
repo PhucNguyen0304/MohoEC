@@ -18,7 +18,7 @@ import SignUp from './components/SignUp.jsx'
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart.jsx'
 import ResetPass from './components/ResetPass.jsx'
-  import PaymentInfor from './components/paymentInfor.jsx'
+  import PaymentInfor from './components/PaymentInfor.jsx'
 import Orders from './pages/Order.jsx'
 import ShopContextProvider, { ShopContext } from './context/ShopContextProvider.jsx'
 import Purchase from './components/Purchase.jsx'
