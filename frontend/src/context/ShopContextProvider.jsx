@@ -214,7 +214,6 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
                 const response = await axios.post(backendUrl + "/api/purchase/update",{email,products,status,idPay,totalAmount,address,numberPhone,note,payMethod})
                 if(response.data.success) {
                 sendMessage(isUserSend,text,image)
-                toast.success("save to purchase success")
                 console.log(cartData)
                 setCartData([])
                 console.log(cartData)
@@ -280,7 +279,6 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
             console.log(cart)
             const response = await axios.post(backendUrl + '/api/user/cart/update',{email,cart})
             if(response.data.success) {
-                toast.success("UPDATE CART TO DB")
                 }
             else {
                 toast.error("UPDATE CART FAil")

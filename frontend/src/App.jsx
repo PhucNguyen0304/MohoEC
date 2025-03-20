@@ -91,9 +91,7 @@ useEffect(() => {
       <ChatBox user = {user}/>
       <GoToTopButton/>
 
-      <Footer/>
-      <TestTrapi/>
-      
+      <Footer/>      
     </>
     </ShopContextProvider>
   )
