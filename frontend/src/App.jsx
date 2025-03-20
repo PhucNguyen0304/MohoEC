@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero.jsx'
-import { BrowserRouter, Router,Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Router,Route, Routes, Navigate } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Footer from './components/Footer.jsx'
 import Test from './components/Test.jsx'
@@ -28,6 +28,7 @@ import ArticleDetail from './pages/ArticleDetail.jsx'
 import TestTrapi from './components/TestTrapi.jsx'
 import Articles from './pages/Articles.jsx'
 import axios from 'axios'
+
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const App = () => {
@@ -87,6 +88,7 @@ useEffect(() => {
           <Route path='/purchase' element = {<Purchase/>}></Route>
           <Route path='/articles' element = {<Articles/>}></Route>
           <Route path='/article/:articleId' element = {<ArticleDetail/>}></Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <ChatBox user = {user}/>
       <GoToTopButton/>

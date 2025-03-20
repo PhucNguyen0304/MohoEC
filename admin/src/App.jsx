@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate} from "react-router-dom";
 import SignIn from "./pages/SignIn.jsx";
 import SideBar from "./components/SideBar.jsx";
 import Add from "./pages/Add.jsx";
@@ -49,6 +49,7 @@ const App = () => {
                                 <Route path='/test' element={<Test/>}/>
                                 <Route path='/messages' element={<Messages/>}/>
                                 <Route path='/article' element={<Article/>}/>
+                                <Route path="*" element={<Navigate to="/" replace />} />
                             </Routes>
                         </div>
                     </div>
