@@ -137,7 +137,6 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
             console.log("GETPURCHASE")
             const response = await axios.post(backendUrl + "/api/purchase/get",{email: userEmail})
             if(response.data.success) {
-                toast.success("get purchase success")
                 console.log(response.data.purchase)
                 setPurchases(response.data.purchase)
             } else {
