@@ -84,7 +84,7 @@ useEffect(() => {
           <Route path='/signup' element = {<SignUp/>}></Route>
           <Route path='/resetpass/:token' element = {<ResetPass/>}></Route>
           <Route path='/order' element = {<Orders user = {user}/>}></Route>
-          <Route path='/paymentinfor' element = {<Paymentinfor1/>}></Route>
+          <Route path='/paymentinfor1' element = {<Paymentinfor1/>}></Route>
           <Route path='/purchase' element = {<Purchase/>}></Route>
           <Route path='/articles' element = {<Articles/>}></Route>
           <Route path='/article/:articleId' element = {<ArticleDetail/>}></Route>
