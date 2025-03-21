@@ -2,66 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ProductItem = ({ image, id, name, price, colors }) => {
-  const priceString = price.toLocaleString("en-US");const navigate = useNavigate();/* 
-  const [dragging, setDragging] = useState(false);
-  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
-  const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 });
-  
-  const dragThreshold = 10; // Threshold for dragging distance
-
-  useEffect(() => {
-    console.log("Dragging state updated:", dragging);
-  }, [dragging]);
-
-  const handleMouseDown = (e) => {
-    setDragging(false);
-    setStartPos({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleMouseMove = (e) => {
-    setCurrentPos({ x: e.clientX, y: e.clientY });
-    const diffX = Math.abs(currentPos.x - startPos.x);
-    const diffY = Math.abs(currentPos.y - startPos.y);
-    if (diffX > dragThreshold || diffY > dragThreshold) {
-      setDragging(true);
-    }
-  };
-
-  const handleMouseUp = (e) => {
-    if (!dragging) {
-      navigate(`/product/${id}`);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-
-
-  const handleTouchStart = (e) => {
-    setDragging(false);
-    setStartPos({ x: e.touches[0].clientX, y: e.touches[0].clientY });
-  };
-
-  const handleTouchMove = (e) => {
-    setCurrentPos({ x: e.touches[0].clientX, y: e.touches[0].clientY });
-    const diffX = Math.abs(currentPos.x - startPos.x);
-    const diffY = Math.abs(currentPos.y - startPos.y);
-    if (diffX > dragThreshold || diffY > dragThreshold) {
-      setDragging(true);
-    }
-  };
-
-  const handleTouchEnd = (e) => {
-    if (!dragging) {
-      navigate(`/product/${id}`);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } };*/
-  
+  const priceString = price.toLocaleString("en-US");const navigate = useNavigate();
+ 
     const [dragging,setDragging] = useState(false)
     const [startPos,setStartPos] = useState({x:0,y:0})
     const [currentPos,setCurrentPos] = useState({x:0,y:0})

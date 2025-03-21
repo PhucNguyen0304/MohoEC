@@ -153,25 +153,7 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
             getPurchase()
         }
     }, [email, products]);
-        {/**()=> {
-        try {
-             const storedCartData = localStorage.getItem('cartData')
-             console.log(JSON.parse(storedCartData))
-             return storedCartData ? JSON.parse(storedCartData) : []
-        } catch(error){
-            console.log(error)
-            return [];
-        }
-    })
-    const [loading, setLoading] = useState(true); 
-    useEffect(()=> {
-        if(cartData.length > 0) {
-            localStorage.setItem('cartData',JSON.stringify(cartData))
-        } else {
-            localStorage.removeItem('cartData')
-        }
-        setLoading(false);
-    },[cartData])*/}
+       
     //send request momo
         const sendRequest = async () => {
             try { 

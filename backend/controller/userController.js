@@ -115,62 +115,6 @@ const deleteUser = async(req,res) => {
         return res.json({success:false,message:error.message})
     }
 }
-{/**
-const forgetPassword = async (req,res) => {
-    try {
-        const {email} = req.body;
-        const checkUser = await userModel.findOne({email})
-        if(!checkUser) {
-            return res.json({success:false,message:"NOT FOUND USER"})
-        }
-        const token = jwt.sign({email},process.env.JWT_SECRET, {
-            expiresIn:"1h",
-        })
-        const transporter = nodemailer.createTransport({
-            service:"gmail",
-            secure:true,
-            auth: {
-                user:process.env.MY_GMAIL,
-                pass:process.env.MY_PASSWORD,
-            }
-        })
-        const receiver  =  {
-             from: process.env.MY_GMAIL,
-             to:email,
-             subject:"Password Reset Request",
-             text: `Click on  this link to generate your new password ${process.env.CLIENT_URL}/reset-password/${token}`
-        }
-        await transporter.sendMail(receiver)
-        return res.json({success:true,message:"Password reset link send successfuly on your gmail account "})
-    } catch(error) {
-        console.log(error)
-        return res.json({success:false,message:error.message})
-    }
-}
-const resetPassword  = async(req,res) => {
-    try {
-        const { token } = req.params;
-        const {password } = req.body;
-        if(!password) {
-            return res.json({success:false,message:"Please provide password"})
-        }
-
-        const decode = jwt.verify(token,process.env.JWT_SECRET)
-        const user = await userModel.findOne({email:decode.email})
-        const salt = await bcrypt.genSalt(10)
-         const newhashPassword =await bcrypt.hash(password,salt)
-
-        user.password = newhashPassword;
-        await user.save();
-
-        return res.json({success:true,message:"Pass reset successfully"})
-    } catch(error) {
-        console.log(error.message)
-        return res.json({success:false,message:error.message})
-    }
-}
-     */}
-
      const forgetPassword = async(req,res) => {
         try {
             const { email } = req.body

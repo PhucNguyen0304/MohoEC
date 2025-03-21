@@ -93,28 +93,6 @@ const ListUsers = () => {
            </tbody>
         </table>
       </div>
-     {/**<div className='grid grid-cols-[0.5fr_0.5fr_2fr_1fr_1fr_0.5fr] text-white py-4 text-lg font-medium' style={{ backgroundColor: 'rgb(55, 65, 81)' }}>
-        <p className='text-center'>Thứ Tự</p>
-        <p className='text-center'>Tên</p>
-        <p className='text-center'>Email</p>
-        <p className='text-center'>Ngày tạo tài khoản</p>
-        <p className='text-center'>Thời Gian Cập Nhật Thông Tin Lần Cuối</p>
-        <p className='text-center'>Xóa</p>
-      </div>
-      {
-        users.map((user, index) => (
-          <Link to={`/update/${user._id}`} key={user._id} className='grid grid-cols-[0.5fr_0.5fr_2fr_1fr_1fr_0.5fr] py-4 text-lg font-medium border-y-2 hover:bg-slate-200'>
-            <p className='text-center'>{index + 1}</p>
-            <p className='text-center'>{user.name}</p>
-            <p className='text-center'>{user.email}</p>
-            <p className='text-center'>{new Date(user.createdAt).toLocaleString('vi-VN')}</p>
-            <p className='text-center'>{new Date(user.updatedAt).toLocaleString('vi-VN')}</p>
-            <div className='cursor-pointer flex items-center justify-center'>
-              <img onClick={(e) => { setVisibleNoti(true);setUserToDelete(user); setNameDelete(user.name);setIdDelete(user._id);preventNav(e)}} className='text-center' src={assets.bin_icon} alt="" />
-            </div>
-          </Link>
-        ))
-      } */} 
     </div>
   );
 };
