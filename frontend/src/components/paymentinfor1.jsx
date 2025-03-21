@@ -35,7 +35,7 @@ const Paymentinfor1 = () => {
     <div className="container mx-auto mt-[100px] p-4">
       <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4 text-center">Thông Tin Thanh Toán</h2>
-        <p className="text-lg mb-2"> Trạng thái : {statePay.resultCode ===   0 ? 'Thành công': "Thất bại"} </p>
+        <p className="text-lg mb-2"> Trạng thái : {statePay.resultCode == 0 ? 'Thành công': "Thất bại"} </p>
         <p className="text-lg mb-2"><strong>Mã thanh toán:</strong> {statePay.orderId}</p>
         <p className="text-lg mb-2"><strong>Hình thức thanh toán:</strong> {statePay.partnerCode}</p>
         <p className="text-lg mb-2"><strong>Tổng tiền:</strong> {statePay.amount}</p>
