@@ -35,7 +35,7 @@ export default {
             "0%": {opacity:'0'},
             "100%":{opacity:"1"}
         },
-        expandMiniCart: {
+        expandMiniCart: { 
           '0%': { opacity: '0'},
           '100%': { opacity: '1'},
         },

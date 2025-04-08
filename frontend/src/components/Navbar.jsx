@@ -260,7 +260,7 @@ useEffect(() => {
                 </div>
 
         </div>
-        <div className='hidden lg:flex pt-10  justify-between max-w-[50%] items-center text-base text-gray-700 font-bold'>
+        <div className='hidden lg:flex pt-10  justify-start gap-x-10 items-center text-base text-gray-700 font-bold'>
                         
                         <Link onClick={handleClick} className='text-xl font-medium pb-5' to='/collection'>
                            <p onClick={()=>{setFilterProducts(products),setSearch('')}}>Bộ sưu tập</p>
