@@ -184,7 +184,7 @@ useEffect(()=> {
     applyFilter()
 },[search])
   return (
-    <div className='px-5  lg:px-[7vw] py-12'>
+    <div className='px-5  lg:px-[7vw] py-2'>
         <div className='flex items-center justify-between'>
             {
                 page === 'all'? (<h1 className='text-base lg:text-5xl text-black font-semibold'>Tất cả sản phẩm</h1>):null 

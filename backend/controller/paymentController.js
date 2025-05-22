@@ -10,9 +10,9 @@ const momowallet = async(req,res)=> {
 let {totalAmount} = req.body
 var accessKey = 'F8BBA842ECF85';
 var secretKey = 'K951B6PE1waDMi640xX08PD3vg6EkVlz';
-var orderInfo = 'pay with MoMo';
+var orderInfo = 'paywith MoMo';
 var partnerCode = 'MOMO';
-var redirectUrl = 'https://moho-ec.vercel.app/paymentinfor1';
+var redirectUrl = 'https://moho-ec.vercel.app/paymentinfor1'; 
 var ipnUrl = 'https://moho-ec.vercel.app/paymentinfor1';
 var requestType = "captureWallet";
 var amount = totalAmount.toString();

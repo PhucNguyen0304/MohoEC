@@ -83,7 +83,7 @@ const handleDragStart = (e) => {
     }
   return (
       <div className={`overflow-hidden px-5 lg:px-[7vw] py-24 mx-auto pt-12` }>
-                  <h1 className='w-full text-4xl font-bold font-Rufina pb-12'>Partner</h1>
+                  <h1 className='w-full text-4xl font-bold font-Rufina pb-12'>Đối tác</h1>
 
           <div className={`w-full grid grid-flow-col gap-12 ${imagePerRow === 2 ? 'auto-cols-[46%]':'auto-cols-[24%]'}  cursor-grab active:cursor-grabbing `}
               style={{transform: `translateX(${tranlate}px)` }}

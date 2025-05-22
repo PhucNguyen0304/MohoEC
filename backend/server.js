@@ -29,7 +29,7 @@ export const io = new Server(server, {
       methods: ["GET", "POST"],
       credentials: true,
     },
-    transports: ["websocket"], // Ensure WebSocket transport is used
+    transports: ["websocket"], 
   });
 app.use(express.static(path.join(__dirname,'../frontend')))
 
@@ -63,6 +63,7 @@ io.on('connection',socket=> {
       users:getUsersOnline()
     })
   })
+  
   socket.on('userLogOut',()=> {
     console.log(socket.id)
     const user = userLeave(socket.id)

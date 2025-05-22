@@ -78,6 +78,7 @@ const Add = ({ token }) => {
       updatedImages.splice(toIndex,0,movedImage)
       setImages(updatedImages)
    }
+   
    const handleImageChange = (index,file) => {
     const updatedImages = [...images]
     updatedImages[index] = file
@@ -99,7 +100,7 @@ const Add = ({ token }) => {
   return (
     <DndContext>
       <form className='flex flex-col gap-4 text-sm' onSubmit={onSubmitHandler}>
-        <p className='text-xl text-gray-700'>Upload Image</p>
+        <p className='text-xl text-gray-700'>Tải ảnh lên</p>
         <div className='flex gap-4 items-center justify-start'>
           {images.map((image, index) => (
             <label key={index} htmlFor={`image${index + 1}`} className='w-[80px] h-[80px]'>
@@ -119,13 +120,13 @@ const Add = ({ token }) => {
             </label>
           ))}
         </div>
-        <p className='text-xl text-gray-700 mt-4'>Product Name</p>
+        <p className='text-xl text-gray-700 mt-4'>Tên sản phẩn</p>
         <input onChange={(e) => setName(e.target.value)} value={name} className='py-4 px-4 border outline-none' type='text' placeholder='Type Here' />
         <p className='text-xl text-gray-700 mt-4'>Product Description</p>
         <textarea onChange={(e) => setDescription(e.target.value)} value={description} name='' id='' placeholder='Write a content'></textarea>
         <div className='grid grid-cols-3 gap-8'>
           <div className='flex flex-col gap-2'>
-            <p className='text-lg lg:text-xl text-gray-700'>Product Category</p>
+            <p className='text-lg lg:text-xl text-gray-700'>Danh mục sản phẩm</p>
             <select onChange={(e) => setCategory(e.target.value)} value={category} className='border py-2 category-bar' name='' id=''>
               <option value='bedroom'>Phòng Ngủ</option>
               <option value='dinningroom'>Phòng Ăn</option>
@@ -133,7 +134,7 @@ const Add = ({ token }) => {
             </select>
           </div>
           <div className='flex flex-col gap-2'>
-            <p className='text-lg lg:text-xl text-gray-700'>Product SubCategory</p>
+            <p className='text-lg lg:text-xl text-gray-700'>Chi tiết danh mục</p>
             <select onChange={(e) => setSubCategory(e.target.value)} value={subCategory} className='border py-2 ' name='' id=''>
               <option value='combo'>Combo</option>
               <option value='wardrobe'>Tủ Đầu Giường</option>
@@ -146,11 +147,11 @@ const Add = ({ token }) => {
             </select>
           </div>
           <div className='flex flex-col gap-2 '>
-            <p className='text-lg lg:text-xl  text-gray-700'>Product Price</p>
+            <p className='text-lg lg:text-xl  text-gray-700'>Giá sản phẩm</p>
             <input onChange={(e) => setPrice(e.target.value)} value={price} className='border py-2  outline-none' type='number' name='' id='' placeholder='1000000' />
           </div>
         </div>
-        <p className='text-xl text-gray-700'>Product Color</p>
+        <p className='text-xl text-gray-700'>Màu sản phẩm</p>
         <div className='flex gap-4 items-center'>
           {colors.map((color, index) => (
             <div
@@ -164,13 +165,13 @@ const Add = ({ token }) => {
         </div>
         <div onClick={(e) => document.getElementById('new').click()} className='flex items-center gap-4'>
           <input onChange={() => setNewProduct(!newProduct)} type='checkbox' name='' id='new' checked={newProduct} />
-          <p className='text-xl cursor-pointer text-gray-700'>Add To New Product</p>
+          <p className='text-xl cursor-pointer text-gray-700'>Thêm vào mục sản phẩm mới</p>
         </div>
         <div onClick={(e) => document.getElementById('bestSeller').click()} className='flex items-center gap-4'>
           <input onChange={() => setBestSeller(!bestSeller)} className='' type='checkbox' name='' id='bestSeller' checked={bestSeller} />
-          <p className='text-xl cursor-pointer text-gray-700'>Add To BestSeller</p>
+          <p className='text-xl cursor-pointer text-gray-700'>Thêm vào mục sản phẩm bán chạy</p>
         </div>
-        <button className='bg-black text-xl text-white cursor-pointer px-4 py-2'>ADD</button>
+        <button className='bg-black text-xl text-white cursor-pointer px-4 py-2'>Thêm Sản Phẩm</button>
       </form>
     </DndContext>
   );

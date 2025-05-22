@@ -18,7 +18,6 @@ const ArticleDetail = () => {
                 if(response.data.success) {
                     setArticles(response.data.articles)
                     console.log(response.data.articles)
-                    toast.success("Get articles successfully")
                     const foundArticle = response.data.articles.find(
                         article => article._id === articleId
                     )

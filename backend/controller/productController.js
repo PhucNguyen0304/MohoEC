@@ -58,12 +58,12 @@ const updateProduct = async (req,res)=> {
         bestSeller:bestSeller==="true"?true:false,
         description,
         new:news==="true"?true:false
-    }
+    }      
     const updatedProduct =await productModel.findByIdAndUpdate(
         id,
         {$set:updateProduct},
         {new:true}
-    )
+    )        
     if(!updateProduct) {
         return res.json({success:false,message:"Product not found"})
     }

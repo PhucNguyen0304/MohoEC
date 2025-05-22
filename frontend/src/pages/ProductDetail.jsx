@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContextProvider';
 import { assets } from '../assets/assets';
@@ -13,6 +13,9 @@ const ProductDetail = ({user}) => {
   const [image, setImage] = useState(product.image[0]);
   const [activeColors, setActiveColors] = useState(Array(product.color.length).fill(false));
   const [color, setColor] = useState();
+  const [zoom, setZoom] = useState(false);
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+  const imgRef = useRef(null);
   
 //get review
 const [review,setReview] = useState([])
@@ -35,7 +38,6 @@ useEffect(()=> {
 useEffect(()=> {
   console.log(review)
 },[review])
-
 
 
   useEffect(() => {
@@ -116,10 +118,18 @@ useEffect(()=> {
     );
   };
 
+  // Xử lý sự kiện hover để phóng to ảnh theo vị trí chuột
+  const handleMouseMove = (e) => {
+    const rect = imgRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setZoomPos({ x, y });
+  };
+
   return (
     <div className='my-24 lg:mt-[180px] px-5 lg:px-[7vw]'>
       {/**container */}
-      <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 bg-white rounded-2xl shadow-lg p-8'>
+      <div className='flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 bg-white rounded-2xl shadow-lg p- pt-0'>
         {/**left side */}
         <div className='flex flex-col-reverse gap-6 lg:flex-row lg:flex-1'>
           <div className='grid grid-cols-4 gap-4 lg:grid-cols-1 lg:w-32'>
@@ -133,16 +143,38 @@ useEffect(()=> {
               />
             ))}
           </div>
-          <div className='w-full'>
-            <img src={image} alt="" className='rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300'/>
+          <div className='w-full relative'>
+            <div
+              className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-full"
+              style={{ minHeight: 280, cursor: zoom ? "zoom-in" : "default" }}
+              onMouseEnter={() => setZoom(true)}
+              onMouseLeave={() => setZoom(false)}
+              onMouseMove={handleMouseMove}
+            >
+              <img
+                ref={imgRef}
+                src={image}
+                alt=""
+                className={`w-full h-full object-contain transition-transform duration-300 ${zoom ? "scale-150" : "scale-100"}`}
+                style={
+                  zoom
+                    ? {
+                        transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
+                        pointerEvents: "none",
+                        cursor: "zoom-in"
+                      }
+                    : { cursor: "default" }
+                }
+              />
+            </div>
           </div>
         </div>
 
         {/**right side */}
-        <div className='flex flex-col gap-6 lg:flex-1 lg:pl-8'>
-          <h1 className='text-2xl font-extrabold border-b-2 border-slate-100 py-4 text-gray-800'>{product.name}</h1>
+        <div className='flex flex-col gap-6 gap-y-2 lg:flex-1 lg:pl-8'>
+          <h1 className='text-2xl font-extrabold border-b-2 border-slate-100 py-2 text-gray-800'>{product.name}</h1>
           
-          <div className='flex gap-3 items-center justify-start border-b-2 border-slate-100 py-4'>
+          <div className='flex gap-3 items-center justify-start border-b-2 border-slate-100 py-2'>
             <div className='flex gap-1'>
               <img className='w-5 h-5' src={assets.star_icon} alt="" />
               <img className='w-5 h-5' src={assets.star_icon} alt="" />
@@ -153,11 +185,11 @@ useEffect(()=> {
             <p className='text-base text-gray-400 font-medium'>(113 đánh giá)</p>
           </div>
 
-          <div className='w-full border-b-2 border-slate-100 py-4'>
+          <div className='w-full border-b-2 border-slate-100 py-2'>
             <p className='text-4xl font-bold text-orange-500'>{product.price.toLocaleString("en-US")}đ</p>
           </div>
 
-          <div className='border-b-2 border-slate-100 py-4'>
+          <div className='border-b-2 border-slate-100 py-2'>
             <p className='text-base font-semibold mb-3'>Màu sắc:</p>
             <div className='flex gap-6 justify-start items-center'>
               {activeColors.map((isActive, index) => {
@@ -181,12 +213,12 @@ useEffect(()=> {
             </div>
           </div>
 
-          <div className='py-4'>
+          <div className='py-2'>
             <p className='text-lg font-bold mb-3'>Mô tả sản phẩm</p>
             <p className='text-gray-600 leading-relaxed'>{product.description}</p>
           </div>
 
-          <div className="flex items-center space-x-6 py-4">
+          <div className="flex items-center space-x-6 py-2">
             <p className='text-base font-semibold'>Số lượng:</p>
             <div className='flex items-center'>
               <button

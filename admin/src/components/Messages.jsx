@@ -242,7 +242,7 @@ const scrollMsg = ()=> {
                                  type="submit"
                                  className="absolute right-0 bg-blue-500 text-white p-2 rounded-r-lg focus:outline-none"
                                >
-                                 Send
+                                 Gửi
                                </button>
                        </div>
                    

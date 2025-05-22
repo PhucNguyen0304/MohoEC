@@ -100,7 +100,8 @@ useEffect(() => {
     const [isInputFocused, setIsInputFocused] = useState(false);
 
   return (
-    <div className='flex flex-col px-5 gap-3 pt-5 pb-5 lg:px-[7vw] fixed top-0 left-0 w-full shadow-sm bg-white z-50'>
+    <div className='flex flex-col px-5 gap-2 pt-3 pb-3 lg:px-[7vw] fixed top-0 left-0 w-full shadow-sm bg-white z-50
+      lg:gap-1 lg:pt-1 lg:pb-1'>
         <InforUser user = {user} setUser={setUser}/>
         <div className='flex justify-between items-center'>
             <img onClick={()=>setVisible(true)} className='w-5 cursor-pointer lg:hidden' src={assets.menu_icon} alt="" />
@@ -260,7 +261,7 @@ useEffect(() => {
                 </div>
 
         </div>
-        <div className='hidden lg:flex pt-10  justify-start gap-x-10 items-center text-base text-gray-700 font-bold'>
+        <div className='hidden lg:flex pt-4 justify-start gap-x-8 items-center text-base text-gray-700 font-bold'>
                         
                         <Link onClick={handleClick} className='text-xl font-medium pb-5' to='/collection'>
                            <p onClick={()=>{setFilterProducts(products),setSearch('')}}>Bộ sưu tập</p>

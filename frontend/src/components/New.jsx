@@ -101,7 +101,7 @@ const New = () => {
 
   return (
     <div className='px-5 lg:px-[7vw] py-12'>
-      <h1 className='w-full text-4xl  pb-12 font-bold font-Rufina'>New Product</h1>
+      <h1 className='w-full text-4xl  pb-12 font-bold font-Rufina'>Sản phẩm mới</h1>
       <div className='relative w-full group overflow-hidden'>
         <div
           className={`relative grid grid-flow-col auto-cols-[46%] gap-4 lg:auto-cols-[24%] cursor-grab active:cursor-grabbing  transition-transform duration-500`}

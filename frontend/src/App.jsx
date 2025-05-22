@@ -25,10 +25,7 @@ import Purchase from './components/Purchase.jsx'
 import ChatBox from './components/ChatBox.jsx'
 import io from 'socket.io-client';
 import ArticleDetail from './pages/ArticleDetail.jsx'
-import TestTrapi from './components/TestTrapi.jsx'
 import Articles from './pages/Articles.jsx'
-import axios from 'axios'
-
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const App = () => {
@@ -45,6 +42,7 @@ const [user,setUser] = useState(()=> {
     return ""
   }
 })
+
 useEffect(() => {
   if(user) {
     localStorage.setItem('user',JSON.stringify(user))

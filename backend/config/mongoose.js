@@ -5,4 +5,4 @@ const connectDB = async()=> {
     })
     await mongoose.connect(`${process.env.MONGOOSE_URL}/moho`)
 }
-export default connectDB
+export default connectDB     

@@ -260,9 +260,10 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
             console.log(cart)
             const response = await axios.post(backendUrl + '/api/user/cart/update',{email,cart})
             if(response.data.success) {
+                toast.success("Lưu giỏ hàng thành công")
                 }
             else {
-                toast.error("UPDATE CART FAil")
+                toast.error("Cập nhật giỏ hàng không thành công")
                 console.log(response.data.message)
             }
         }catch(error)  {

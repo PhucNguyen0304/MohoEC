@@ -15,7 +15,7 @@ const List = ({ token }) => {
     try {
       const response = await axios.post(backendUrl + '/api/product/delete', { id }, { headers: { token } });
       if (response.data.success) {
-        toast.success('Product Removed');
+        toast.success('Xóa sản phẩm thành cộng');
         fetchProducts();
       } else {
         toast.error(response.data.message);
@@ -46,7 +46,7 @@ const List = ({ token }) => {
   return (
     <div className='overflow-x-auto w-full'>
 
-      <p className='text-4xl font-bold my-6'>List Products</p>
+      <p className='text-4xl font-bold my-6'>Danh sách sản phẩm</p>
       <table className='table-auto border-collapse border border-gray-300 w-full'>
         <thead>
           <tr className="bg-gray-200">

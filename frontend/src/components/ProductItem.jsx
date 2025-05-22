@@ -75,7 +75,7 @@ const ProductItem = ({ image, id, name, price, colors }) => {
     }
   return (
     <div
-      className='flex flex-col gap-3'
+      className='flex flex-col gap-2'
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -86,21 +86,39 @@ const ProductItem = ({ image, id, name, price, colors }) => {
       <Link
         onDragStart={handlePreventDefault}
         to={`/product/${id}`}
-        className='flex flex-col gap-3'
+        className='flex flex-col gap-2 h-full'
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className='overflow-hidden'>
-          <img className='hover:scale-150 transition-all duration-1000 ease-in-out' src={currentImg} alt="" />
+        <div className='overflow-hidden h-[130px] lg:h-[240px] flex items-center justify-start relative'>
+          {/* Ảnh 1 */}
+          <img
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${currentImg === image[0] ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            src={image[0]}
+            alt=""
+            style={{ maxWidth: '100%' }}
+          />
+          {/* Ảnh 2 */}
+          {image[1] && (
+            <img
+              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${currentImg === image[1] ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+              src={image[1]}
+              alt=""
+              style={{ maxWidth: '100%' }}
+            />
+          )}
         </div>
-        <div className='flex flex-col gap-3'>
-          <p className='text-base lg:text-xl text-black'>{name}</p>
-          <p className='text-base lg:text-xl text-orange-600'>{priceString}<span className='underline'>đ</span></p>
+        <div className='flex flex-col items-start gap-1 text-left'>
+          <p className='text-sm lg:text-lg text-black'>{name}</p>
+          <p className='text-sm lg:text-lg text-orange-600'>{priceString}<span className='underline'>đ</span></p>
         </div>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-1 items-center justify-start mt-1'>
           {colors.map((color, index) => (
-            <div key={index} className={`bg-${color}-500 w-[15px] h-[15px] lg:w-[25px] lg:h-[25px] rounded-full cursor-pointer`}></div>
+            <div
+              key={index}
+              className={`bg-${color}-500 w-[13px] h-[13px] lg:w-[20px] lg:h-[20px] rounded-full cursor-pointer`}
+            ></div>
           ))}
         </div>
       </Link>
